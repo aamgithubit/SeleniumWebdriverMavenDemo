@@ -125,10 +125,10 @@ public class TestBase {
     public void openBrowser() {
 
         if (properties.getProperty("BrowserName").equalsIgnoreCase("chrome")) {
-
-            WebDriverManager.chromedriver().setup();
+        	System.setProperty("webdriver.chrome.driver","C:\\Users\\msilocal\\Downloads\\chromedriver.exe");
+            //WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            System.setProperty("webdriver.chrome.logfile", "./logs/chromeLogs.txt");
+           
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
